@@ -35,6 +35,10 @@ describe('DemoTempFormComponent', () => {
 
 })); */
 
+afterEach(() => {
+  fixture.destroy();
+});
+
 it('[Email - Check - Valid] - Should check email field is not valid',async(()=>{
 
   fixture.whenStable().then(()=>{

@@ -23,6 +23,10 @@ describe('FormDemoComponent', () => {
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
  /*  it('[Email-Check] - should check users email address is invalid', ()=>{
     let email = component.loginForm.controls['useremail'];
     expect(email.valid).toBeFalsy();

@@ -24,7 +24,9 @@ class TestHostComponent {
 describe('ComicDetailComponent', () => {
   let fixture: ComponentFixture<TestHostComponent>;
   let contextServiceSpy: jasmine.SpyObj<ContextService>;
-
+  afterEach(() => {
+    fixture.destroy();
+  });
   beforeEach(async () => {
     contextServiceSpy = jasmine.createSpyObj('ContextService', ['getImage']);
     contextServiceSpy.getImage.and.returnValue('http://fakeimage/');

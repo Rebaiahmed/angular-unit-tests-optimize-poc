@@ -69,6 +69,10 @@ describe('ComicListComponent', () => {
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it('should display comics', () => {
     const comicDetailDisplay: HTMLElement[] = fixture.nativeElement.querySelectorAll('app-comic-detail');
     expect(comicDetailDisplay.length).toBe(1);

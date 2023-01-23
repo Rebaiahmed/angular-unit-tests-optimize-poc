@@ -21,6 +21,7 @@ describe('PostService', () => {
     httpMock = TestBed.get(HttpTestingController);
   });
 
+
   it(`should fetch posts as an Observable`, async(inject([HttpTestingController, PostService],
     (httpClient: HttpTestingController, postService: PostService) => {
 

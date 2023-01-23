@@ -12,10 +12,14 @@ describe('HttpDemoComponent', () => {
     TestBed.configureTestingModule({
       imports: [ReactiveFormsModule, HttpClientTestingModule],
       declarations: [ HttpDemoComponent ]
-      
+
     })
     .compileComponents();
   }));
+
+  afterEach(() => {
+    fixture.destroy();
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HttpDemoComponent);

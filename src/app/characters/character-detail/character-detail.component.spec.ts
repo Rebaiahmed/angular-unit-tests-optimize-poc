@@ -35,6 +35,17 @@ describe('CharacterDetailComponent', () => {
   let contextServiceSpy: jasmine.SpyObj<ContextService>;
   let imageDisplay: HTMLImageElement[];
   let cardDisplay: MatCardHarness;
+  beforeAll(() => {
+    console.time('Unit Test Execution Time');
+  });
+
+  afterEach(() => {
+    fixture.destroy();
+  });
+
+  afterAll(() => {
+    console.timeEnd('Unit Test Execution Time');
+  });
 
   beforeEach(async () => {
     contextServiceSpy = jasmine.createSpyObj('ContextService', ['getImage']);

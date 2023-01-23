@@ -10,9 +10,9 @@ describe('DemoReactFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
+      declarations: [
         FormDemoComponent,
-        DemoReactFormComponent 
+        DemoReactFormComponent
       ],
       imports: [ReactiveFormsModule]
     })
@@ -25,11 +25,15 @@ describe('DemoReactFormComponent', () => {
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
- 
 
-  
+
+
 });

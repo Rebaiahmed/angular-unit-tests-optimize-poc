@@ -25,12 +25,16 @@ describe('CustomDirectiveDemoComponent', () => {
     debugElement = fixture.debugElement;
   }));
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it('should test the directive for its changes to div', ()=>{
     component.username = "Rudra";
     let btn = debugElement.query(By.css('button'));
     btn.triggerEventHandler('click', {});
-   
-   
+
+
     fixture.detectChanges();
 
     let div = debugElement.query(By.css('#customDiv'));
@@ -43,6 +47,6 @@ describe('CustomDirectiveDemoComponent', () => {
     expect(div.nativeElement.style.backgroundColor).toBe('orange');
     expect(div.nativeElement.style.fontSize).toBe('28px');
   });
-  
-   
+
+
 });

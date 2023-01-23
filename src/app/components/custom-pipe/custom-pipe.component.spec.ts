@@ -16,6 +16,10 @@ describe('CustomPipeComponent', () => {
     .compileComponents();
   }));
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   beforeEach(() => {
     fixture = TestBed.createComponent(CustomPipeComponent);
     component = fixture.componentInstance;

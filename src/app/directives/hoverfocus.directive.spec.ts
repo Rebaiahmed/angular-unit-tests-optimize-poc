@@ -27,6 +27,10 @@ describe('Directive: HoverFocus', () => {
         inputEl = fixture.debugElement.query(By.css('input'));
     });
 
+    afterEach(() => {
+      fixture.destroy();
+    });
+
     it('hovering over input', () => {
         inputEl.triggerEventHandler('mouseover', null);
         fixture.detectChanges();

@@ -27,6 +27,10 @@ describe('Testing @Input & @Output', () => {
       .compileComponents();
   }));
 
+  afterEach(() => {
+    listfixture.destroy();
+  });
+
   beforeEach(() => {
     listfixture = TestBed.createComponent(InOutDemoComponent);
     userListcomponent = listfixture.componentInstance;

@@ -29,6 +29,10 @@ describe('FooterComponent', () => {
     footerDisplay = fixture.nativeElement.querySelectorAll('small');
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

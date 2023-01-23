@@ -5,7 +5,7 @@ import { TestBed, async } from '@angular/core/testing';
 
 describe('SquarePipe', () => {
   let pipe: SquarePipe;
-  
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ SquarePipe ],
@@ -14,8 +14,9 @@ describe('SquarePipe', () => {
     .compileComponents();
     pipe = new SquarePipe();
   }));
-  
-  it('create an instance', () => {    
+
+
+  it('create an instance', () => {
     expect(pipe).toBeTruthy();
   });
 

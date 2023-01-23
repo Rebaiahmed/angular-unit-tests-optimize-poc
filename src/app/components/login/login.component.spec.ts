@@ -33,6 +33,10 @@ describe('Component: Login', () => {
         el = fixture.debugElement.query(By.css('a'));
     });
 
+    afterEach(() => {
+      fixture.destroy();
+    });
+
     it('Button label via fakeAsync() and tick()', fakeAsync(() => {
         expect(el.nativeElement.textContent.trim()).toBe('');
         fixture.detectChanges();

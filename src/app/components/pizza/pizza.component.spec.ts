@@ -21,6 +21,10 @@ describe('PizzaComponent', () => {
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  });
+
   it(`should have a title 'I love pizza!'`, async(() => {
     fixture = TestBed.createComponent(PizzaComponent);
     component = fixture.debugElement.componentInstance;

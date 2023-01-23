@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Character } from '../../core/character.model';
 import { ContextService } from '../../core/core.service';
 import { CharacterCardComponent } from './character-card.component';
+import { MockBuilder, MockComponent, MockComponents, MockRender, ngMocks } from 'ng-mocks';
 
 @Component({
   template: '<app-character-card [character]="character" (selectedChange)="selected = $event"></app-character-card>'
@@ -26,18 +27,29 @@ describe('CharacterCardComponent', () => {
   let fixture: ComponentFixture<TestHostComponent>;
   let contextServiceSpy: jasmine.SpyObj<ContextService>;
 
+  beforeAll(() => {
+    console.time('Unit Test Execution Time');
+  });
+
+   afterEach(() => {
+    fixture.destroy();
+  });
+
+  afterAll(() => {
+    console.timeEnd('Unit Test Execution Time');
+  });
+
   beforeEach(() => {
     contextServiceSpy = jasmine.createSpyObj('ContextService', ['getImage']);
     contextServiceSpy.getImage.and.returnValue('http://fakeimage');
-
     TestBed.configureTestingModule({
       imports: [
         MatGridListModule,
         MatIconModule
       ],
       declarations: [
-        CharacterCardComponent,
-        TestHostComponent
+        TestHostComponent, CharacterCardComponent
+        //MockComponents(TestHostComponent, CharacterCardComponent),
       ],
       providers: [
         { provide: ContextService, useValue: contextServiceSpy }
