@@ -4,7 +4,12 @@ import { UserModel } from './user.model';
 import { PhotoModel } from '../model/photo.model';
 import { PostModel } from '../model/post.model';
 import { FormGroup, FormControl } from '@angular/forms';
-
+export interface Tile {
+  color: string;
+  cols: number;
+  rows: number;
+  text: string;
+}
 @Component({
   selector: 'http-demo',
   templateUrl: './http-demo.component.html',
@@ -15,6 +20,13 @@ export class HttpDemoComponent implements OnInit {
   postList: PostModel[];
 
   constructor(private httpDataService: HttpDataService) { }
+
+  tiles: Tile[] = [
+    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
+    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
+    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
+    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
+  ];
 
   ngOnInit() {
     this.postForm = new FormGroup({

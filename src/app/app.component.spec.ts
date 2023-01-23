@@ -2,7 +2,7 @@ import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
   let component: AppComponent;
   let fixture: ComponentFixture<AppComponent>;
 
@@ -45,7 +45,7 @@ fdescribe('AppComponent', () => {
     }, 3000);
   }));
 
-  fit('should show message success and then hide it after 3 seconds', fakeAsync(() => {
+  it('should show message success and then hide it after 3 seconds', fakeAsync(() => {
     component.showMessageSuccess();
     tick(); // Move the clock forward by the time specified in setTimeout
     fixture.detectChanges();
