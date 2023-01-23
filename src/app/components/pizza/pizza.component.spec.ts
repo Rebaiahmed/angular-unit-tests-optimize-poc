@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
 
 import { PizzaComponent } from './pizza.component';
 
@@ -25,11 +25,18 @@ describe('PizzaComponent', () => {
     fixture.destroy();
   });
 
-  it(`should have a title 'I love pizza!'`, async(() => {
+     it(`should have a title 'I love pizza!'`, async(() => {
     fixture = TestBed.createComponent(PizzaComponent);
     component = fixture.debugElement.componentInstance;
     expect(component.title).toEqual('I love pizza!');
   }));
+
+/*   it(`should have a title 'I love pizza!'`, fakeAsync(() => {
+    fixture = TestBed.createComponent(PizzaComponent);
+    component = fixture.debugElement.componentInstance;
+    flush();
+    expect(component.title).toEqual('I love pizza!');
+  })); */
 
   it('should create', () => {
     expect(component).toBeTruthy();

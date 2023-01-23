@@ -1,6 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { DebugElement } from "@angular/core";
-import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, flush, TestBed, tick } from '@angular/core/testing';
 import { By } from "@angular/platform-browser";
 import { AuthService } from "./auth.service";
 import { LoginComponent } from './login.component';
@@ -51,7 +51,19 @@ describe('Component: Login', () => {
         expect(el.nativeElement.textContent.trim()).toBe('Logout');
     }));
 
-    it('Button label via async() and whenStable()', async(() => {
+/*      it('Button label via fakeAsync() and tick()', fakeAsync(() => {
+      fixture.detectChanges();
+      expect(el.nativeElement.textContent.trim()).toBe('Login');
+      spyOn(authService, 'isAuthenticated').and.returnValue(Promise.resolve(true));
+
+      component.ngOnInit();
+      flush();
+
+      fixture.detectChanges();
+      expect(el.nativeElement.textContent.trim()).toBe('Logout');
+  })); */
+
+     it('Button label via async() and whenStable()', async(() => {
         // async() knows about all the pending promises defined in it's function body.
         fixture.detectChanges();
         expect(el.nativeElement.textContent.trim()).toBe('Login');
